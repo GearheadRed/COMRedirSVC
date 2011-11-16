@@ -1,0 +1,12 @@
+Current version in this release: V1.2
+
+V1.2:
+*Added specialized commands 'Shrink C:\' and 'Extend C:\' to facilitate generating the script necessary to automate disk resizing(diskpart does not accept inline command switches due to its menu oriented design, automation is facilitated using a script).  Currently only supported actions are shrinking primary disc, secondary partition to minimum possible size or extending primary disk, secondary partition to full size available remaining on disk.
+*Altered the 'Completed' status output after command execution to return 'Execution Completed.' to help improve automation verification of execution completion before sending next command.
+*Removed the graphical installer portion of the project.  The 'SC create' command is now utilized for installing the service and 'SC delete' command for removal (check Install.txt for exact command syntax).
+
+V1.1
+*Corrected the 'Completed' status ouput so it would only be returned after the executed command was fully completed.  Prior to this it was returning with every line the command would output back through the serial interface.
+
+V1.0
+*Initial project release to SourceForge as beta v1.0.

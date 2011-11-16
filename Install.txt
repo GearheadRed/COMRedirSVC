@@ -1,0 +1,39 @@
+COMRedirSVC installation instructions.
+
+=============================
+
+To install the service follow the instructions specific to the bit version of Windows you are currently running.
+
+x86:
+--------------------------------------------------------------------
+Copy the COMRedirSVC.exe to C:\Windows\System32\
+Run the command below (note you may need to use an elevated privilege command prompt)
+
+sc create COMRedirSVC binPath= "C:\Windows\System32\COMRedirSVC.exe" start= auto
+
+Command result should be:  [SC] CreateService SUCCESS
+
+x64:
+----------------------------------------------------------------------
+Copy the COMRedirSVC.exe to C:\Windows\SysWow64\
+Run the command below (note you may need to use an elevated privilege command prompt)
+
+sc create COMRedirSVC binPath= "C:\Windows\SysWOW64\COMRedirSVC.exe" start= auto
+
+Command result should be:  [SC] CreateService SUCCESS
+
+============================================
+
+To remove the service follow the instructions below:
+
+Stop the service using either the SC command below or from the Services MMC
+
+sc stop COMRedirSVC
+
+Run the command below (note you may need to use an elevated privilege command prompt)
+
+sc delete COMRedirSVC
+
+Command result should be: [SC] DeleteService SUCCESS
+
+Delete the COMRedirSVC.exe from the directory it was copied into (depending on bitness of Windows see installation instructions above for specific paths).
